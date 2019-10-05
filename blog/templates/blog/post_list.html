@@ -6,16 +6,12 @@
   <div>
     <h1><a href="/">Django Sunil's Blog</a></h1>
     </div>
+    {% for post in posts %}
     <div>
-      <p>published:10/09/2019, 10:54</p>
-      <h2><a href="">My first post</a></h2>
-      <p>Aliza I love you from bottom of my heart and will be ever lasting until the last breath.</p>
+      <p>published: {{post.published_date}}</p>
+      <h2><a href="">{{post.title}}</a></h2>
+      <p>{{post.text|linebreaksbr}}</p>
       </div>
-      <div>
-        <p>published:10/09/2019, 11:14</p>
-        <h2><a href="">My second blog</a></h2>
-        <p>Hi, there is also one more girl in my life that is Shaiza and she has been studying
-          in the same school, where I'm as a principal.</p>
-          </div>
+      {% endfor %}
 </body>
   </html>
